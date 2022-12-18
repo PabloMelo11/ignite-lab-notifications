@@ -1,5 +1,5 @@
 import { randomUUID } from 'node:crypto';
-import { Replace } from 'src/shared/Replace';
+import { Replace } from '@shared/Replace';
 import Content from '../value-objects/content';
 
 type NotificationProps = {

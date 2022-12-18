@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import Content from '../../domain/value-objects/content';
-import Notification from '../../domain/entities/notification';
-import NotificationsRepository from '../../domain/repositories/notifications-repository';
+import Content from '@domain/value-objects/content';
+import Notification from '@domain/entities/notification';
+import NotificationsRepository from '@domain/repositories/notifications-repository';
 
 type Input = {
   recipientId: string;
