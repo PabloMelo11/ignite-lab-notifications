@@ -15,6 +15,7 @@
     "strictNullChecks": true,
     "noImplicitAny": false,
     "strictBindCallApply": false,
+    "resolveJsonModule": true,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "strictPropertyInitialization": false,
@@ -23,7 +24,7 @@
       "@application/*": ["./src/application/*"],
       "@infra/*": ["./src/infra/*"],
       "@shared/*": ["./src/shared/*"],
-      "@test/*": ["./test/*"],
+      "@test/*": ["./test/*"]
     }
   }
 }
