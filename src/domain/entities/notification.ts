@@ -2,7 +2,7 @@ import { randomUUID } from 'node:crypto';
 import { Replace } from '@shared/Replace';
 import Content from '../value-objects/content';
 
-type NotificationProps = {
+export type NotificationProps = {
   recipientId: string;
   content: Content;
   category: string;
