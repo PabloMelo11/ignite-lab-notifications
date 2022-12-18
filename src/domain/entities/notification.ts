@@ -1,3 +1,4 @@
+import { Replace } from 'src/shared/Replace';
 import Content from '../value-objects/content';
 
 type NotificationProps = {
@@ -11,8 +12,11 @@ type NotificationProps = {
 export default class Notification {
   private props: NotificationProps;
 
-  constructor(props: NotificationProps) {
-    this.props = props;
+  constructor(props: Replace<NotificationProps, { createdAt?: Date }>) {
+    this.props = {
+      ...props,
+      createdAt: props.createdAt ?? new Date(),
+    };
   }
 
   public set recipientId(recipientId: string) {
