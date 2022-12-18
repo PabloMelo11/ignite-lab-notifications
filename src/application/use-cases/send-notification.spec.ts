@@ -5,10 +5,10 @@ import InMemoryNotificationsRepository from '@test/repositories/in-memory-notifi
 describe('Send notification', () => {
   const notificationsRepository = new InMemoryNotificationsRepository();
 
-  it('should be able to send a notification', async () => {
-    const sendNotification = new SendNotification(notificationsRepository);
+  it('should be able to read a notification', async () => {
+    const readNotification = new SendNotification(notificationsRepository);
 
-    const { notification } = await sendNotification.execute({
+    const { notification } = await readNotification.execute({
       category: 'social',
       content: 'This is a notification',
       recipientId: 'example-recipient-id',
