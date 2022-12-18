@@ -1,5 +1,6 @@
 import Content from '../../domain/value-objects/content';
 import Notification from '../../domain/entities/notification';
+import NotificationsRepository from '../../domain/repositories/notifications-repository';
 
 type Input = {
   recipientId: string;
@@ -12,6 +13,8 @@ type Output = {
 };
 
 export default class SendNotification {
+  constructor(private notificationsRepository: NotificationsRepository) {}
+
   async execute(request: Input): Promise<Output> {
     const { category, content, recipientId } = request;
 
@@ -20,6 +23,8 @@ export default class SendNotification {
       category,
       content: new Content(content),
     });
+
+    await this.notificationsRepository.create(notification);
 
     return { notification };
   }
